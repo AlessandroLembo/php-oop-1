@@ -1,3 +1,14 @@
+<?php
+class Movie
+{
+    public $title;
+    public $director;
+    public $year;
+    public $vote;
+    public $genre;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
