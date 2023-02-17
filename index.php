@@ -8,7 +8,7 @@ class Movie
     public $vote;
 
 
-    public function __construct($_title, $_director, $_year, $_genre, $_vote = Null)
+    public function __construct($_title, $_director, $_year, $_genre, $_vote)
     {
         $this->title = $_title;
         $this->director = $_director;
@@ -16,14 +16,20 @@ class Movie
         $this->vote = $_vote;
         $this->genre = $_genre;
     }
+
+    public function cultMovie()
+    {
+        echo "Cult movie: $this->title, $this->director, $this->year, $this->genre, $this->vote";
+    }
 }
 
-$first_movie = new Movie('Pulp fiction', 'Quentin tarantino', 1994, 'gangster');
+$first_movie = new Movie('Pulp fiction', 'Quentin tarantino', 1994, 8, 'gangster');
 
-$second_movie = new Movie('Arancia meccanica', 'Stanley Kubrik', 1971, 'drammatico');
+$second_movie = new Movie('Arancia meccanica', 'Stanley Kubrik', 1971, 10, 'drammatico');
 
-var_dump($first_movie);
-var_dump($second_movie);
+
+$first_movie->cultMovie();
+
 
 
 
