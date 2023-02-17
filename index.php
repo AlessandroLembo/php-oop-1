@@ -33,13 +33,6 @@ $first_movie = new Movie('Pulp fiction', 'Quentin tarantino', 1994, 8, 'gangster
 $second_movie = new Movie('Arancia meccanica', 'Stanley Kubrik', 1971, 10, 'drammatico');
 
 
-$first_movie->printMovie();
-
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +46,20 @@ $first_movie->printMovie();
 </head>
 
 <body>
-
+    <ul>
+        <li><?= $first_movie->title ?></li>
+        <li><i><?= $first_movie->director ?></i></li>
+        <li>Anno di uscita: <?= $first_movie->year ?></li>
+        <li>Media recensioni: <?= $first_movie->vote  ?></li>
+        <li>Genere: <?= $first_movie->genre  ?></li>
+    </ul>
+    <ul>
+        <li><?= $second_movie->title ?></li>
+        <li><i><?= $second_movie->director ?></i></li>
+        <li>Anno di uscita: <?= $second_movie->year ?></li>
+        <li>Media recensioni: <?= $second_movie->vote  ?></li>
+        <li>Genere: <?= $second_movie->genre  ?></li>
+    </ul>
 </body>
 
 </html>
