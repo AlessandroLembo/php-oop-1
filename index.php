@@ -17,9 +17,14 @@ class Movie
         $this->genre = $_genre;
     }
 
-    public function cultMovie()
+    public function printMovie()
     {
-        echo "Cult movie: $this->title, $this->director, $this->year, $this->genre, $this->vote";
+        echo $this->infoMovie();
+    }
+
+    public function infoMovie()
+    {
+        return "Cult movie: $this->title, $this->director, $this->year, $this->genre, $this->vote";
     }
 }
 
@@ -28,7 +33,8 @@ $first_movie = new Movie('Pulp fiction', 'Quentin tarantino', 1994, 8, 'gangster
 $second_movie = new Movie('Arancia meccanica', 'Stanley Kubrik', 1971, 10, 'drammatico');
 
 
-$first_movie->cultMovie();
+$first_movie->printMovie();
+
 
 
 
