@@ -28,9 +28,31 @@ class Movie
     }
 }
 
-$first_movie = new Movie('Pulp fiction', 'Quentin tarantino', 1994, 'gangster', 8);
+$movie = [
+    [
+        'id' => 1,
+        'title' => 'Pulp Fiction',
+        'director' => 'Quentin tarantino',
+        'year' => 1994,
+        'genre' => 'gangster',
+        'vote' => 8
+    ],
+    [
+        'id' => 2,
+        'title' => 'Arancia meccanica',
+        'director' => 'Stanley Kubrik',
+        'year' => 1971,
+        'genre' => 'drama',
+        'vote' => 10
+    ]
+];
 
-$second_movie = new Movie('Arancia meccanica', 'Stanley Kubrik', 1971, 'drammatico', 10);
+$movie_object = [];
+
+
+// $first_movie = new Movie('Pulp fiction', 'Quentin tarantino', 1994, 'gangster', 8);
+
+// $second_movie = new Movie('Arancia meccanica', 'Stanley Kubrik', 1971, 'drammatico', 10);
 
 
 ?>
