@@ -36,7 +36,15 @@ $movies = [
         'year' => 1971,
         'genre' => 'drama',
         'vote' => 10
-    ]
+    ],
+    [
+        'id' => 3,
+        'title' => 'Babylon',
+        'director' => 'Damien Chazelle',
+        'year' => 2022,
+        'genre' => 'commedia',
+        'vote' => 6.5
+    ],
 ];
 
 $movie_object = [];
@@ -74,6 +82,7 @@ foreach ($movies as $movie) {
                 <li>Genere: <?= $movie->genre ?></li>
             </ul>
         <?php endforeach; ?>
+
     </div>
 
 </body>
