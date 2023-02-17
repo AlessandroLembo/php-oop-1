@@ -18,6 +18,11 @@ class Movie
         $this->genre = $_genre;
         $this->vote = $_vote;
     }
+
+    public function uppercaseTitle()
+    {
+        return strtoupper($this->title);
+    }
 }
 
 $movies = [
@@ -75,7 +80,7 @@ foreach ($movies as $movie) {
         <h1>Lista dei film</h1>
         <?php foreach ($movie_object as $movie) : ?>
             <ul class="movie">
-                <li><strong><?= $movie->title ?></strong></li>
+                <li><strong><?= $movie->uppercaseTitle() ?></strong></li>
                 <li><i><?= $movie->director ?></i></li>
                 <li>Anno di uscita: <?= $movie->year ?></li>
                 <li>Media recensioni: <?= $movie->vote  ?></li>
