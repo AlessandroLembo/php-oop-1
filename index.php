@@ -1,6 +1,7 @@
 <?php
 class Movie
 {
+    public $id;
     public $title;
     public $director;
     public $year;
@@ -8,27 +9,18 @@ class Movie
     public $vote;
 
 
-    public function __construct($_title, $_director, $_year, $_genre, $_vote)
+    public function __construct($_id, $_title, $_director, $_year, $_genre, $_vote)
     {
+        $this->id = $_id;
         $this->title = $_title;
         $this->director = $_director;
         $this->year = $_year;
         $this->genre = $_genre;
         $this->vote = $_vote;
     }
-
-    public function printMovie()
-    {
-        echo $this->infoMovie();
-    }
-
-    public function infoMovie()
-    {
-        return "Cult movie: $this->title, $this->director, $this->year, $this->genre, $this->vote";
-    }
 }
 
-$movie = [
+$movies = [
     [
         'id' => 1,
         'title' => 'Pulp Fiction',
@@ -49,10 +41,10 @@ $movie = [
 
 $movie_object = [];
 
-
-// $first_movie = new Movie('Pulp fiction', 'Quentin tarantino', 1994, 'gangster', 8);
-
-// $second_movie = new Movie('Arancia meccanica', 'Stanley Kubrik', 1971, 'drammatico', 10);
+foreach ($movies as $movie) {
+    $cult_movie = new Movie($movie['id'], $movie['title'], $movie['director'], $movie['year'], $movie['genre'], $movie['vote']);
+    $movie_object[] = $cult_movie;
+};
 
 
 ?>
@@ -73,20 +65,15 @@ $movie_object = [];
 <body>
     <div class="container">
         <h1>Lista dei film</h1>
-        <ul class="movie">
-            <li><strong><?= $first_movie->title ?></strong></li>
-            <li><i><?= $first_movie->director ?></i></li>
-            <li>Anno di uscita: <?= $first_movie->year ?></li>
-            <li>Media recensioni: <?= $first_movie->vote  ?></li>
-            <li>Genere: <?= $first_movie->genre  ?></li>
-        </ul>
-        <ul class="movie">
-            <li><strong><?= $second_movie->title ?></strong></li>
-            <li><i><?= $second_movie->director ?></i></li>
-            <li>Anno di uscita: <?= $second_movie->year ?></li>
-            <li>Media recensioni: <?= $second_movie->vote  ?></li>
-            <li>Genere: <?= $second_movie->genre  ?></li>
-        </ul>
+        <?php foreach ($movie_object as $movie) : ?>
+            <ul class="movie">
+                <li><strong><?= $movie->title ?></strong></li>
+                <li><i><?= $movie->director ?></i></li>
+                <li>Anno di uscita: <?= $movie->year ?></li>
+                <li>Media recensioni: <?= $movie->vote  ?></li>
+                <li>Genere: <?= $movie->genre ?></li>
+            </ul>
+        <?php endforeach; ?>
     </div>
 
 </body>
